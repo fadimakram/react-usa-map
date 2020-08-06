@@ -21,6 +21,14 @@ class USAMap extends React.Component {
     return this.props.defaultFill;
   };
 
+  strokeStateColor = (state) => {
+    if (this.props.customize && this.props.customize[state] && this.props.customize[state].stroke) {
+      return this.props.customize[state].stroke;
+    }
+
+    return this.props.defaultStroke;
+  };
+
   stateClickHandler = (state) => {
     if (this.props.customize && this.props.customize[state] && this.props.customize[state].clickHandler) {
       return this.props.customize[state].clickHandler
@@ -38,7 +46,7 @@ class USAMap extends React.Component {
   buildPaths = () => {
     let paths = [];
     for (let stateKey in data) {
-      const path = <USAState key={stateKey} stateName={data[stateKey].name} dimensions={data[stateKey]["dimensions"]} state={stateKey} fill={this.fillStateColor(stateKey)} onClickState={this.stateClickHandler(stateKey)} onMouseOverState={this.stateMouseOverHandler(stateKey)} />
+      const path = <USAState key={stateKey} stateName={data[stateKey].name} dimensions={data[stateKey]["dimensions"]} state={stateKey} fill={this.fillStateColor(stateKey)} stroke={this.strokeStateColor(stateKey)} onClickState={this.stateClickHandler(stateKey)} onMouseOverState={this.stateMouseOverHandler(stateKey)} />
       paths.push(path);
     };
     return paths;
@@ -67,6 +75,7 @@ USAMap.propTypes = {
   height: PropTypes.number,
   title: PropTypes.string,
   defaultFill: PropTypes.string,
+  defaultStroke: PropTypes.string,
   customize: PropTypes.object
 };
 
@@ -76,6 +85,7 @@ USAMap.defaultProps = {
   width: 959,
   height: 593,
   defaultFill: "#D3D3D3",
+  defaultStroke: "",
   title: "Blank US states map",
   customize: {}
 };
