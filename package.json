@@ -1,17 +1,17 @@
 {
-    "name": "@ncsasports/react-usa-map",
     "version": "1.5.1",
+    "name": "@jlev/react-usa-map",
     "description": "React component with all USA States with customizable options",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/NCSAAthleticRecruiting/react-usa-map.git"
+        "url": "https://github.com/jlev/react-usa-map.git"
     },
     "author": "Gabriela D'Avila Ferrara <me@gabriela.io>",
     "bugs": {
-        "url": "https://github.com/NCSAAthleticRecruiting/react-usa-map/issues"
+        "url": "https://github.com/jlev/react-usa-map/issues"
     },
-    "homepage": "https://github.com/NCSAAthleticRecruiting/react-usa-map#readme",
+    "homepage": "https://github.com/jlev/react-usa-map#readme",
     "keywords": [
         "react-component",
         "react",
