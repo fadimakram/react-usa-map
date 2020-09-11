@@ -1,6 +1,6 @@
 {
     "name": "@jlev/react-usa-map",
-    "version": "1.5.2",
+    "version": "1.5.3",
     "description": "React component with all USA States with customizable options",
     "license": "MIT",
     "repository": {
@@ -43,14 +43,12 @@
         "eslint-plugin-react": "^7.4.0",
         "jest": "^24.8.0",
         "nodemon": "^1.12.1",
-        "react": "^15.4.2",
         "react-addons-test-utils": "^15.4.2",
-        "react-dom": "^15.4.2",
         "react-test-renderer": "15"
     },
     "peerDependencies": {
-        "react": "^15.4.2",
-        "react-dom": "^15.4.2"
+        "react": "^16.8",
+        "react-dom": "^16.8"
     },
     "dependencies": {
         "babel-runtime": "^6.26.0"

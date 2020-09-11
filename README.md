@@ -13,7 +13,7 @@ Code: [http://github.com/gabidavila/react-usa-map-demo](http://github.com/gabida
 
 ## Installation
 
-It requires `react` 15.4.2 or higher, compatible with React 16.0.0. Run:
+It requires `react` React 16.8.0 or higher. Run:
 
 `yarn add react-usa-map`
 

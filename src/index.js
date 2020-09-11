@@ -46,7 +46,7 @@ class USAMap extends React.Component {
   buildPaths = () => {
     let paths = [];
     for (let stateKey in data) {
-      const path = <USAState key={stateKey} stateName={data[stateKey].name} dimensions={data[stateKey]["dimensions"]} state={stateKey} fill={this.fillStateColor(stateKey)} stroke={this.strokeStateColor(stateKey)} onClickState={this.stateClickHandler(stateKey)} onMouseOverState={this.stateMouseOverHandler(stateKey)} />
+      const path = <USAState key={stateKey} stateName={data[stateKey].name} dimensions={data[stateKey]["dimensions"]} offset={data[stateKey]["offset"]} state={stateKey} fill={this.fillStateColor(stateKey)} stroke={this.strokeStateColor(stateKey)} onClickState={this.stateClickHandler(stateKey)} onMouseOverState={this.stateMouseOverHandler(stateKey)} />
       paths.push(path);
     };
     return paths;
@@ -58,9 +58,12 @@ class USAMap extends React.Component {
         <title>{this.props.title}</title>
         <g className="outlines">
           {this.buildPaths()}
-          <g className="DC state">
-            <path className="DC1" fill={this.fillStateColor("DC1")} d="M801.8,253.8 l-1.1-1.6 -1-0.8 1.1-1.6 2.2,1.5z" />
-            <circle className="DC2" onClick={this.clickHandler} onMouseOver={this.mouseOverHandler} data-name={"DC"} fill={this.fillStateColor("DC2")} stroke="#FFFFFF" strokeWidth="1.5" cx="801.3" cy="251.8" r="5" opacity="1" />
+          <g className="DC state" transform="translate(801.8,253.8)">
+            <path className="DC1" fill={this.fillStateColor("DC1")} d="M0,0 l-1.1-1.6 -1-0.8 1.1-1.6 2.2,1.5z" />
+            <circle className="DC2" onClick={this.clickHandler} onMouseOver={this.mouseOverHandler} data-name={"DC"} fill={this.fillStateColor("DC2")} stroke="#FFFFFF" strokeWidth="1.5" cx="801.3" cy="251.8" r="5" opacity="1">
+              <title>District of Columbia</title>
+            </circle>
+            {/*<text x="-5" y="-5">DC</text>*/}
           </g>
         </g>
       </svg>
@@ -71,7 +74,7 @@ class USAMap extends React.Component {
 USAMap.propTypes = {
   onClick: PropTypes.func.isRequired,
   onMouseOver: PropTypes.func.isRequired,
-  width: PropTypes.oneOfType([ PropTypes.string, PropTypes.number]),
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   height: PropTypes.number,
   title: PropTypes.string,
   defaultFill: PropTypes.string,
