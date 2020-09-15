@@ -50,7 +50,7 @@ const USAState = (props) => {
       <path d={groupDimensions} fill={props.fill} stroke={props.stroke} data-name={props.state} className={`${props.state} state`} onClick={props.onClickState} onMouseOver={props.onMouseOverState}>
         <title>{props.stateName}</title>
       </path>
-      <text text-anchor="middle" style={{pointerEvents: "none"}} x={textX} y={textY}>{props.state}</text>
+      <text textAnchor="middle" style={{pointerEvents: "none"}} x={textX} y={textY}>{props.state}</text>
     </g>
   );
 }
